@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Js functions</title>
+    <style>
+        table, tr, td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body onload="load()" onresize="resize()" onunload="unload()">
+    <table cellspacing="0" cellpadding="50">
+        <tr>
+            <td style="background-color: lightblue; color: black;">onClick-></td>
+            <td id="clk"><input type="button" value="Click Me" onclick="clickevent()" id="onclick" size="3"></td>
+            <td style="background-color: lightblue;color: black;">mouseover-></td>
+            <td><input type="text" onmouseover="mouseover()" id="mouseover" size="3"></td>
+            <td style="background-color: lightblue; color: black;">mouseout-></td>
+            <td><input type="text" onmouseout="mouseout()" id="mouseout" size="3"></td>
+            <td style="background-color: lightblue; color: black;">mousedown ↓ </td>
+        </tr>
+
+        <tr>
+            <td><input type="text" onkeyup="keyup()" id="keyup" size="3"></td>
+            <td style="background-color: lightblue; color: black;"><-keyup/down</td>
+            <td><input type="text" onmousemove="mousemove()" id="mouseout" size="3"></td>
+            <td style="background-color: lightblue; color: black;"><-Mousemove</td>
+            <td><p id="mouseup" onmouseup="mouseup()">Mouseup</p></td>
+            <td style="background-color: lightblue; color: black;"><-mouseup</td>
+            <td><p id="mousedown" onmousedown="mousedown()">Click Me</p></td>
+        </tr>
+
+        <tr>
+            <td style="background-color: lightblue; color: black;">onFocus-></td>
+            <td><input type="text" onfocus="focusev()" id="focusev" size="3"></td>
+            <td style="background-color: lightblue; color: black;">onBlur-></td>
+            <td><input type="text" onblur="blurev()" id="blurev" size="3"></td>
+            <td style="background-color: lightblue; color: black;">onChange-></td>
+            <td><input type="text" onchange="change()" id="change" size="3"></td>
+            <td style="background-color: lightblue; color: black;">
+                <form onsubmit="submitev()">
+                    <input type="submit" value="SUBMIT">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function clickevent() {
+            var para=document.createElement("p");
+            var content=document.createTextNode("You Clicked Succesfully!!");
+            para.appendChild(content);
+            var ele=document.getElementById("clk");
+            ele.appendChild(para);
+        }
+        function mouseover() {
+            alert("Mouse Over Event called")
+        }
+        function mouseout() {
+            alert("Mouse out Event called")
+        }
+        function mousedown() {
+            alert("Mouse Down Event called")
+        }
+        function mouseup() {
+            alert("Mouse Up Event called")
+        }
+        function mousemove() {
+            alert("Mouse move Event called")
+        }
+        function keyup() {
+            alert("Key Up/Down Event called")
+        }
+        function focusev() {
+            alert("onFocus Event called")
+        }
+        function blurev() {
+            alert("onBlur Event called")
+        }
+        function change() {
+            alert("onChange Event called")
+        }
+        function submitev() {
+            alert("onSubmit Event called")
+        }
+        function load() {
+            alert("onLoad Event called")
+        }
+        function resize() {
+            alert("onResize Event called\nHeight : "+window.innerHeight+"\nWidth : "+window.innerWidth)
+        }
+        function unloadev() {
+            alert("onUnload Event Called")
+        }
+        function resetev() {
+            alert("onReset Event Called")
+        }
+    </script>
+</body>
+</html>
